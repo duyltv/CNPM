@@ -137,8 +137,9 @@ class Update_ {
 	// TODO: Update file to table
 	// Chuong
 	private function Files_Update($Files_Object) {
-		
-		return true; // True if success, False if not
+		$sql = "UPDATE files SET name = $Files_Object->$name, url='$Files_Object->$urlDoe', type_id = $Files_Object->$type_id, type_name = $Files_Object->$type_name WHERE id=$Files_Object->$id";
+		$DB_Conn->query($sql);
+		//return true; // True if success, False if not
 	}
 }
 

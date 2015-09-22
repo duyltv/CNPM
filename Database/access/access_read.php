@@ -103,6 +103,22 @@ class Read_ {
 	static function Files($id) {
 		$files = new Files_();
 		
+		$sql = "SELECT id, name, url, type_id FROM files WHERE id=$id";
+		$result = $DB_Conn->query($sql);
+		
+		$row = mysql_fetch_row($result);
+		
+		$files->$id = $row[0];
+		$files->$name = $row[1];
+		$files->$url = row[2];
+		$files->$type_id = $row[3];
+		
+		$sql = "SELECT type_id, type_name FROM file_types WHERE type_id=$row[3]";
+		$result = $DB_Conn->query($sql);
+		
+		$row = mysql_fetch_row($result);
+		$files->$type_name = $row[1];
+		
 		return $files;
 	}
 }

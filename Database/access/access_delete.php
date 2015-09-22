@@ -49,8 +49,10 @@ class Delete_ {
 	// TODO: Delete Files by id
 	// Chuong
 	static function Files($id) {
+		$sql = "DELETE FROM files WHERE id=".$id;
 		
-		return true; // True if success, False if not
+		return $DB_Conn->query($sql);
+		//return true; // True if success, False if not
 	}
 }
 ?>

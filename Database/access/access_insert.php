@@ -137,8 +137,11 @@ class Insert_ {
 	// TODO: Insert file to table
 	// Chuong
 	private function Files_Insert($Files_Object) {
-		
-		return true; // True if success, False if not
+		// Trong sql đâu có type_name đâu
+		$sql = "INSERT INTO files (id,name, url, type_id , type_name) VALUES ('".$File_Object->$id."','".$File_Object->$name."','".$File_Object->$url."','".$File_Object->$type_id."','".$File_Object->$type_name."')";
+	
+		return $conn->query($sql);
+		//return true;// True if success, False if not
 	}
 }
 
